@@ -1,0 +1,157 @@
+/* Define CSS classes for icons */
+.search-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%227%22%20stroke%3D%22%23808080%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cline%20x1%3D%2215%22%20y1%3D%2215%22%20x2%3D%2220%22%20y2%3D%2220%22%20stroke%3D%22%23808080%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E
+");
+  background-repeat: no-repeat;
+  background-size: contain; /* or 'cover' depending on your needs */
+  display: inline-block;
+}
+
+.dropdown-selected-options {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 95%; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.dropdown-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(-45 50 50)"><path d="M 20,20 L 20,80 L 80,80" stroke="black" stroke-width="10" fill="none"/></g></svg>');
+  width: 100px; /* Adjust width as needed */
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.close-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="none" stroke="black" stroke-width="5"/><line x1="30" y1="30" x2="70" y2="70" stroke="black" stroke-width="5"/><line x1="70" y1="30" x2="30" y2="70" stroke="black" stroke-width="5"/></svg>');
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.clear-icon {
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="%23808080"/><line x1="30" y1="30" x2="70" y2="70" stroke="white" stroke-width="5"/><line x1="70" y1="30" x2="30" y2="70" stroke="white" stroke-width="5"/></svg>');
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+/* Your existing CSS code */
+.dropdown-container {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  max-height: none; /* Remove max-height to see all options */
+  overflow: visible; /* Remove overflow */
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-icon {
+  margin-right: 8px;
+}
+
+.search-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+
+.clear-button {
+  position: absolute;
+  right: 8px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 16px;
+}
+
+.dropdown-option {
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.dropdown-option:hover {
+  background-color: #e6f7ff; /* Hover background color */
+}
+
+.dropdown-option.selected {
+  background-color: #e6f7ff; /* Background color for selected option */
+}
+
+.option-icon {
+  margin-right: 8px;
+}
+
+.selected-option {
+  display: inline-flex;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 20px;
+  padding: 2px 10px;
+  margin: 2px;
+}
+
+.close-button {
+  margin-top: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.no-options {
+  padding: 8px;
+}
+
+.keyword-wrapper {
+  word-spacing: 1px;
+  display: inline;
+}
+
+.highlight-text {
+  color: #fff;
+  background-color: #1bc2c0;
+}

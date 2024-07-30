@@ -1,0 +1,8 @@
+node_modules
+.git
+.storybook
+.github
+.DS_Store
+storybook-static
+src/stories
+.npmrc
