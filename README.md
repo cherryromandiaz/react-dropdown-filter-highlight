@@ -1,51 +1,88 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Preview](https://i.ibb.co.com/ZH82cQT/preview.jpg)
+# React Dropdown Component with Option Filter and Highlight Text features.
+A customizable dropdown component for React with search and multi-select functionality, and keyword highlighting support.
 
-## Available Scripts
+## Installation
+You can install the package via npm:
 
-In the project directory, you can run:
+### `npm install react-dropdown-filter`
 
-### `npm start`
+### Usage
+Here's how you can use the Dropdown component in your React project:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Basic Example
+Import the Component
+```
+import React from 'react';
+import Dropdown, { DropdownOption } from 'react-dropdown-filter';
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Define Your Options
+```
+const options: DropdownOption[] = [
+  { value: '1', label: 'Option one' },
+  { value: '2', label: 'Long Option two' },
+  // Add more options as needed
+];`
+```
+Implement the Dropdown Component
+```
+const DropdownTest: React.FC = () => {
+  const handleSelect = (selected: DropdownOption | DropdownOption[]) => {
+    console.log('Selected options:', selected);
+  };
 
-### `npm test`
+  return (
+    <div style={{ padding: '20px' }}>
+      <h1>Dropdown Test</h1>
+      <Dropdown
+        options={options}
+        multiSelect={true}
+        customRenderOption={(option) => (
+          <span>
+            {option.icon} {option.label}
+          </span>
+        )}
+        searchable={true}
+        onSelect={handleSelect}
+      />
+    </div>
+  );
+};
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export default DropdownTest;
+```
 
-### `npm run build`
+## Component Props
+options: An array of DropdownOption objects. Each option must have a value and a label, and can optionally include an icon.
+```
+interface DropdownOption {
+  value: string;
+  label: string;
+  icon?: React.ReactElement;
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<b> multiSelect </b> : (Optional) Boolean to enable or disable multi-select functionality. Default is true.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<b> customRenderOption </b>: (Optional) A function to customize the rendering of each option. Receives a DropdownOption and returns a React.ReactElement.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<b> searchable </b>: (Optional) Boolean to enable or disable the search bar. Default is true.
 
-### `npm run eject`
+<b> usePortal </b>: (Optional) Boolean to render the dropdown menu in a portal (i.e., outside the normal DOM hierarchy). Default is false.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<b> zIndex </b>: (Optional) Number to set the z-index of the dropdown menu. Default is 1000.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<b> onSelect</b> : A callback function that receives the selected option(s). The parameter can be a single DropdownOption or an array of DropdownOption.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Customization
+<b> HighlightText Component </b>: The HighlightText component is used internally to highlight the search term within the options' labels. You can customize its behavior by modifying the HighlightText component code.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<b> CSS </b>: The component uses CSS classes for styling. Ensure that you include styles.css or customize the styles according to your needs.
 
-## Learn More
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-=======
-# react-dropdown-filter-highlight
-React Dropdown Component with Option Filter and Highlight Text features.
->>>>>>> 2d2ad8087ec402c618b047d6f7aedf533025c977
+## License
+This project is licensed under the MIT License
